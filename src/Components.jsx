@@ -5,7 +5,10 @@ import { MdInfoOutline } from "react-icons/md";
 import { useState } from 'react';
 import {NOTBIRDS} from './notbird'
 import { IMAGES } from './images';
-const BIGARRAY = shuffle([...IMAGES, ...NOTBIRDS]);
+const BIGARRAY = shuffle([
+  ...IMAGES.map(img => ({ ...img, uniqueId: `bird-${img.id}` })),
+  ...NOTBIRDS.map(img => ({ ...img, uniqueId: `notbird-${img.id}` }))
+]);
 
 
 function RecaptchaHeader() {
@@ -108,7 +111,7 @@ function Recaptcha() {
     
 
     const handleSolve = () => {
-        const solution = IMAGES[currentLevelIdx].solution;
+        const solution = BIGARRAY[currentLevelIdx].solution;
 
         let isCorrect = true;
         for (let i = 0; i < 16; i++) {
@@ -171,6 +174,8 @@ function NotBirdBirds() {
         </div>
       ))}
     </div>
+
+
     </>
 
   );
