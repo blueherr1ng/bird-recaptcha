@@ -5,6 +5,7 @@ import { MdInfoOutline } from "react-icons/md";
 import { useState } from 'react';
 import {NOTBIRDS} from './notbird'
 import { IMAGES } from './images';
+const BIGARRAY = shuffle([...IMAGES, ...NOTBIRDS]);
 
 
 function RecaptchaHeader() {
@@ -101,7 +102,7 @@ console.log(myArray); // Example output: [2, 6, 9, 1, 5, 3, 7, 4, 8]
 function Recaptcha() {
     const [squares, setSquares] = useState(Array(16).fill(false));
     const [currentLevelIdx, setCurrentLevelIdx] = useState(0);
-    const BIGARRAY = shuffle([...IMAGES, ...NOTBIRDS]);
+
 
     const currentImage = BIGARRAY[currentLevelIdx];
     
