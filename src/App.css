@@ -90,7 +90,7 @@
 }
 
 .square.selected {
-  outline: 4px solid white;
+  outline: 4px solid #4285f4;
   outline-offset: -2px;
   transform: scale(0.9);
 }
@@ -101,14 +101,7 @@
   display: table;
 }
 
-.status {
-  margin-bottom: 10px;
-}
-.game {
-  display: flex;
-  flex-direction: row;
-}
-
-.game-info {
-  margin-left: 20px;
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
