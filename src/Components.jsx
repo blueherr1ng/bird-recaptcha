@@ -3,7 +3,7 @@ import { TbReload } from "react-icons/tb";
 import { MdHeadphones } from "react-icons/md";
 import { MdInfoOutline } from "react-icons/md";
 import { useState } from 'react';
-import {NOTBIRDS} from './notbird'
+import { NOTBIRDS } from './notbird'
 import { IMAGES } from './images';
 const BIGARRAY = shuffle([
   ...IMAGES.map(img => ({ ...img, uniqueId: `bird-${img.id}` })),
@@ -187,9 +187,9 @@ export default function Container () {
     return (
         <div className="container big">
             <div className="tabheader">
-                <button onClick={() => setActiveTab('game')}>game</button>
-                <button onClick={() => setActiveTab('gallery')}>gallery</button>
-                <button onClick={() => setActiveTab('notbirds')}>notbirds</button>
+                <button className = "buttontab" onClick={() => setActiveTab('game')}>game</button>
+                <button className = "buttontab" onClick={() => setActiveTab('gallery')}>gallery</button>
+                <button className = "buttontab" onClick={() => setActiveTab('notbirds')}>notbirds</button>
             </div>
             
             <div>

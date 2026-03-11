@@ -12,8 +12,9 @@
 }
 
 .container.big {
-  padding: 20px;
-  padding-top: 0px;
+  padding: 30px;
+  padding-top: 10px;
+  border-radius: 10px;
 }
 
 .header {
@@ -26,8 +27,15 @@
 .tabheader {
   background-color: white;
   display: flex;
-  justify-content: center;
   padding: 10px;
+  justify-content: space-between;
+}
+
+.buttontab {
+  width: auto;
+  color: black;
+  background-color: #eee;
+  flex-grow: 1;
 }
 
 .text {
