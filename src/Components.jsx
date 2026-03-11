@@ -74,12 +74,35 @@ function RecaptchaFooter({squares, handleSolve}){
    )
 }
 
+function shuffle(array) {
+  let currentIndex = array.length, randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]
+    ];
+  }
+
+  return array;
+}
+
+const myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+shuffle(myArray);
+console.log(myArray); // Example output: [2, 6, 9, 1, 5, 3, 7, 4, 8]
 
 
 function Recaptcha() {
     const [squares, setSquares] = useState(Array(16).fill(false));
     const [currentLevelIdx, setCurrentLevelIdx] = useState(0);
-    const BIGARRAY = [...IMAGES, ...NOTBIRDS]
+    const BIGARRAY = shuffle([...IMAGES, ...NOTBIRDS]);
+
     const currentImage = BIGARRAY[currentLevelIdx];
     
 
