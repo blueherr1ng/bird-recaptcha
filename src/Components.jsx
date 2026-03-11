@@ -3,6 +3,7 @@ import { TbReload } from "react-icons/tb";
 import { MdHeadphones } from "react-icons/md";
 import { MdInfoOutline } from "react-icons/md";
 import { useState } from 'react';
+import {NOTBIRDS} from './notbird'
 import { IMAGES } from './images';
 
 
@@ -129,6 +130,24 @@ function Gallery() {
   );
 }
 
+
+function NotBirdBirds() {
+  return (
+    <>    
+    <p> definitely birds</p>
+    <div className="gallery-container">
+      {NOTBIRDS.map((item) => (
+        <div key={item.id}>
+          <img src={item.image} alt="bird" style={{ width: '300px', margin: '10px' }} />
+          <p>{item.image}</p>
+        </div>
+      ))}
+    </div>
+    </>
+
+  );
+}
+
 export default function Container () {
     const [activeTab, setActiveTab] = useState('game');
 
@@ -137,11 +156,13 @@ export default function Container () {
             <div className="tabheader">
                 <button onClick={() => setActiveTab('game')}>game</button>
                 <button onClick={() => setActiveTab('gallery')}>gallery</button>
+                <button onClick={() => setActiveTab('notbirds')}>notbirds</button>
             </div>
             
             <div>
                 {activeTab === 'game' && <Recaptcha />}
                 {activeTab === 'gallery' && <Gallery />}
+                {activeTab === 'notbirds' && <NotBirdBirds />}
             </div>
         </div>
     );
