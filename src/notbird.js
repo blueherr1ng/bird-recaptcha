@@ -71,4 +71,24 @@ export const NOTBIRDS = [
     id: 18,
     image: "/notbirds/18.gif",
   },
+  {
+    id: 19,
+    image: "/notbirds/19.jpg",
+  },
+  {
+    id: 20,
+    image: "/notbirds/20.jpg",
+  },
+  {
+    id: 21,
+    image: "/notbirds/21.jpg",
+  },
+  {
+    id: 22,
+    image: "/notbirds/22.jpg",
+  },
+  {
+    id: 23,
+    image: "/notbirds/23.jpg",
+  },
 ];
