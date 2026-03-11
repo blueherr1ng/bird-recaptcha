@@ -195,6 +195,8 @@ function Recaptcha() {
 
 function Gallery() {
   return (
+    <>    
+    <p> a collection of camouflaged or just poorly photographed birds - try to find them!</p>
     <div className="gallery-container">
       {IMAGES.map((item) => (
         <div key={item.id} className="gallery-item">
@@ -203,6 +205,8 @@ function Gallery() {
         </div>
       ))}
     </div>
+    </>
+
   );
 }
 
