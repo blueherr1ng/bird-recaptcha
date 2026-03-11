@@ -79,7 +79,9 @@ function RecaptchaFooter({squares, handleSolve}){
 function Recaptcha() {
     const [squares, setSquares] = useState(Array(16).fill(false));
     const [currentLevelIdx, setCurrentLevelIdx] = useState(0);
-    const currentImage = IMAGES[currentLevelIdx];
+    const BIGARRAY = [...IMAGES, ...NOTBIRDS]
+    const currentImage = BIGARRAY[currentLevelIdx];
+    
 
     const handleSolve = () => {
         const solution = IMAGES[currentLevelIdx].solution;
@@ -93,7 +95,7 @@ function Recaptcha() {
         }
         if (isCorrect) {
             setSquares(Array(16).fill(false));
-            if (currentLevelIdx < IMAGES.length - 1) {
+            if (currentLevelIdx < BIGARRAY.length - 1) {
                 setCurrentLevelIdx(currentLevelIdx + 1);
             } else {
                 setCurrentLevelIdx(0);
@@ -132,10 +134,12 @@ function Gallery() {
 
 
 function NotBirdBirds() {
+  
   return (
     <>    
     <p> definitely birds</p>
     <div className="gallery-container">
+
       {NOTBIRDS.map((item) => (
         <div key={item.id}>
           <img src={item.image} alt="bird" style={{ width: '300px', margin: '10px' }} />

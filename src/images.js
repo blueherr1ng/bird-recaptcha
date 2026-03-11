@@ -16,8 +16,8 @@ export const IMAGES = [
   },
   {
     id: 4,
-    image: "/birds/sonimcrine.jpg",
-    solution: [],
+    image: "/birds/seagull.jpg",
+    solution: [1, 5],
   },
   {
     id: 5,
@@ -98,10 +98,5 @@ export const IMAGES = [
     id: 20,
     image: "/birds/greatblueheron.jpg",
     solution: [10],
-  },
-  {
-    id: 21,
-    image: "/birds/seagull.jpg",
-    solution: [1, 5],
   },
 ];
